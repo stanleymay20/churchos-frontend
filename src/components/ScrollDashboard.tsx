@@ -46,17 +46,15 @@ const ScrollDashboard: React.FC = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Fetch dashboard data from backend
-  const { data: dashboardData, isLoading, error } = useQuery<DashboardData>(
-    'scrollDashboard',
-    async () => {
+  const { data: dashboardData, isLoading, error } = useQuery<DashboardData>({
+    queryKey: ['scrollDashboard'],
+    queryFn: async () => {
       const response = await axios.get('http://localhost:8000/scroll-dashboard');
       return response.data;
     },
-    {
-      refetchInterval: 30000, // Refresh every 30 seconds
-      staleTime: 10000,
-    }
-  );
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 10000,
+  });
 
   // Update current time every second
   useEffect(() => {

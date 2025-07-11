@@ -7,55 +7,55 @@
 // FIREBASE CONFIGURATION
 // =============================================================================
 export const FIREBASE_CONFIG = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 } as const;
 
 // =============================================================================
 // BACKEND API CONFIGURATION
 // =============================================================================
-export const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:8000';
-export const BACKEND_API_URL_PROD = import.meta.env.VITE_BACKEND_API_URL_PROD || 'https://api.churchos.app';
+export const BACKEND_API_URL = process.env.REACT_APP_BACKEND_API_URL || 'http://localhost:8000';
+export const BACKEND_API_URL_PROD = process.env.REACT_APP_BACKEND_API_URL_PROD || 'https://api.churchos.app';
 
 // =============================================================================
 // STRIPE CONFIGURATION
 // =============================================================================
-export const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
-export const STRIPE_PUBLISHABLE_KEY_PROD = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY_PROD;
+export const STRIPE_PUBLISHABLE_KEY = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '';
+export const STRIPE_PUBLISHABLE_KEY_PROD = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY_PROD || '';
 
 // =============================================================================
 // ANALYTICS CONFIGURATION
 // =============================================================================
-export const GOOGLE_ANALYTICS_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
-export const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN;
+export const GOOGLE_ANALYTICS_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID || '';
+export const MIXPANEL_TOKEN = process.env.REACT_APP_MIXPANEL_TOKEN || '';
 
 // =============================================================================
 // FEATURE FLAGS
 // =============================================================================
 export const FEATURE_FLAGS = {
-  ENABLE_AI_CHARACTERS: import.meta.env.VITE_ENABLE_AI_CHARACTERS === 'true',
-  ENABLE_LIVESTREAMING: import.meta.env.VITE_ENABLE_LIVESTREAMING === 'true',
-  ENABLE_XR_HOLYLAND: import.meta.env.VITE_ENABLE_XR_HOLYLAND === 'true',
-  ENABLE_MOBILE_CONTROL: import.meta.env.VITE_ENABLE_MOBILE_CONTROL === 'true',
-  ENABLE_ANALYTICS: import.meta.env.VITE_ENABLE_ANALYTICS === 'true',
-  ENABLE_BILLING: import.meta.env.VITE_ENABLE_BILLING === 'true',
+  ENABLE_AI_CHARACTERS: process.env.REACT_APP_ENABLE_AI_CHARACTERS === 'true',
+  ENABLE_LIVESTREAMING: process.env.REACT_APP_ENABLE_LIVESTREAMING === 'true',
+  ENABLE_XR_HOLYLAND: process.env.REACT_APP_ENABLE_XR_HOLYLAND === 'true',
+  ENABLE_MOBILE_CONTROL: process.env.REACT_APP_ENABLE_MOBILE_CONTROL === 'true',
+  ENABLE_ANALYTICS: process.env.REACT_APP_ENABLE_ANALYTICS === 'true',
+  ENABLE_BILLING: process.env.REACT_APP_ENABLE_BILLING === 'true',
 } as const;
 
 // =============================================================================
 // LOCALIZATION CONFIGURATION
 // =============================================================================
-export const DEFAULT_LOCALE = import.meta.env.VITE_DEFAULT_LOCALE || 'en';
-export const SUPPORTED_LOCALES = (import.meta.env.VITE_SUPPORTED_LOCALES || 'en,de,fr,twi,hausa,yoruba,he,ar').split(',');
+export const DEFAULT_LOCALE = process.env.REACT_APP_DEFAULT_LOCALE || 'en';
+export const SUPPORTED_LOCALES = (process.env.REACT_APP_SUPPORTED_LOCALES || 'en,de,fr,twi,hausa,yoruba,he,ar').split(',');
 
 // =============================================================================
 // ENVIRONMENT
 // =============================================================================
-export const NODE_ENV = import.meta.env.VITE_NODE_ENV || 'development';
-export const APP_VERSION = import.meta.env.VITE_APP_VERSION || '1.0.0';
+export const NODE_ENV = process.env.REACT_APP_NODE_ENV || 'development';
+export const APP_VERSION = process.env.REACT_APP_VERSION || '1.0.0';
 
 // =============================================================================
 // UTILITY FUNCTIONS
@@ -116,7 +116,7 @@ export const validateEnvironment = (): void => {
     'VITE_FIREBASE_APP_ID',
   ];
 
-  const missingVars = requiredVars.filter(varName => !import.meta.env[varName]);
+  const missingVars = requiredVars.filter(varName => !process.env[varName]);
 
   if (missingVars.length > 0) {
     console.error('Missing required environment variables:', missingVars);
