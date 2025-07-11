@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, MapPin, Play, Pause, Volume2, VolumeX } from 'lucide-react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { Globe, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 const HolyLandScene: React.FC = () => {
   const [currentScene, setCurrentScene] = useState('road-to-emmaus');

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, Play, Calendar, Users, MessageSquare } from 'lucide-react';
-import { useQuery } from '@tanstack/react-query';
+import { Radio, Play, Users, MessageSquare } from 'lucide-react';
 import axios from 'axios';
 
 const GoLiveWithHeaven: React.FC = () => {

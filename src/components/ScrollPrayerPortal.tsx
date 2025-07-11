@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Video, 
   Mic, 
   MicOff, 
   VideoOff, 
   Phone, 
-  Users, 
   MessageSquare,
   Upload,
   ScrollText
@@ -33,7 +32,7 @@ const ScrollPrayerPortal: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [isVideoOn, setIsVideoOn] = useState(true);
   const [prayerText, setPrayerText] = useState('');
-  const [sessionTitle, setSessionTitle] = useState('');
+  const [sessionTitle] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
 

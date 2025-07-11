@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Shield, Users, Key, Lock } from 'lucide-react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 
 const ScrollSeal: React.FC = () => {
-  const [selectedRole, setSelectedRole] = useState('');
+
 
   const roles = [
     {

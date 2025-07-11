@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Save, Eye, Send, Image, Type, Music } from 'lucide-react';
+import { FileText, Save, Eye, Image, Type, Music } from 'lucide-react';
 import axios from 'axios';
 
 const ScrollComposer: React.FC = () => {

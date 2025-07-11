@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Smartphone, Play, Pause, Volume2, VolumeX, Send, MessageSquare } from 'lucide-react';
+import { Smartphone, Play, Send } from 'lucide-react';
 import axios from 'axios';
 
 const MobileControlApp: React.FC = () => {

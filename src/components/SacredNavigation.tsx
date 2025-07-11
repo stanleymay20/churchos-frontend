@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { 
   Home, 
   Heart, 
@@ -32,7 +32,7 @@ const SacredNavigation: React.FC<SacredNavigationProps> = ({
   currentUser = { name: 'Prophet Sarah', role: 'Nation Seer', permissions: [] },
   onLogout 
 }) => {
-  const location = useLocation();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Define navigation items with role requirements
