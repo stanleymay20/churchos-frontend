@@ -1,0 +1,398 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sacred Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Sacred Color Variables */
+:root {
+  --scroll-gold: #D4AF37;
+  --scroll-purple: #663399;
+  --scroll-blue: #1E3A8A;
+  --scroll-indigo: #3730A3;
+  --scroll-emerald: #059669;
+  --scroll-amber: #D97706;
+  --scroll-rose: #E11D48;
+  --scroll-slate: #0F172A;
+  --scroll-gray: #374151;
+  --scroll-white: #F9FAFB;
+  --scroll-black: #111827;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--scroll-slate) 0%, var(--scroll-purple) 50%, var(--scroll-blue) 100%);
+    color: var(--scroll-white);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+  
+  .font-scroll {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-prophetic {
+    font-family: 'Crimson Text', serif;
+  }
+}
+
+/* Sacred Component Classes */
+@layer components {
+  /* Scroll Glow Effect */
+  .scroll-glow {
+    text-shadow: 
+      0 0 10px rgba(212, 175, 55, 0.5),
+      0 0 20px rgba(212, 175, 55, 0.3),
+      0 0 30px rgba(212, 175, 55, 0.1);
+    animation: scroll-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Glow Text */
+  .glow-text {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+  
+  /* Prophetic Pulse */
+  .prophetic-pulse {
+    animation: prophetic-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Scroll Shadow */
+  .scroll-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(212, 175, 55, 0.1),
+      0 2px 4px -1px rgba(212, 175, 55, 0.06),
+      0 0 0 1px rgba(212, 175, 55, 0.1);
+  }
+  
+  /* Sacred Card */
+  .scroll-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-card:hover {
+    @apply bg-white/15;
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Sacred Button */
+  .btn-sacred {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    background: linear-gradient(135deg, var(--scroll-gold) 0%, var(--scroll-amber) 100%);
+    color: var(--scroll-black);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+  
+  .btn-sacred:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  }
+  
+  /* Prophetic Button */
+  .btn-prophetic {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    background: linear-gradient(135deg, var(--scroll-purple) 0%, var(--scroll-indigo) 100%);
+    color: var(--scroll-white);
+    box-shadow: 0 4px 15px rgba(102, 51, 153, 0.3);
+  }
+  
+  .btn-prophetic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 51, 153, 0.4);
+  }
+  
+  /* Sacred Input */
+  .input-sacred {
+    @apply w-full px-4 py-3 rounded-lg border transition-all duration-300;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--scroll-white);
+  }
+  
+  .input-sacred:focus {
+    @apply outline-none ring-2;
+    border-color: var(--scroll-gold);
+    ring-color: rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Sacred Navigation */
+  .nav-sacred {
+    @apply flex items-center space-x-6;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 rounded-lg transition-all duration-300;
+    color: var(--scroll-white);
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .nav-link.active {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--scroll-gold);
+  }
+  
+  /* Sacred Badge */
+  .badge-sacred {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+    background: linear-gradient(135deg, var(--scroll-gold) 0%, var(--scroll-amber) 100%);
+    color: var(--scroll-black);
+  }
+  
+  /* Sacred Alert */
+  .alert-sacred {
+    @apply p-4 rounded-lg border;
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.3);
+    color: var(--scroll-gold);
+  }
+  
+  /* Sacred Loading */
+  .loading-sacred {
+    @apply flex items-center justify-center;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2;
+    border-color: transparent;
+    border-top-color: var(--scroll-gold);
+  }
+}
+
+/* Sacred Animations */
+@layer utilities {
+  /* Scroll Pulse Animation */
+  @keyframes scroll-pulse {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(212, 175, 55, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.3),
+        0 0 30px rgba(212, 175, 55, 0.1);
+    }
+    50% {
+      text-shadow: 
+        0 0 15px rgba(212, 175, 55, 0.7),
+        0 0 25px rgba(212, 175, 55, 0.5),
+        0 0 35px rgba(212, 175, 55, 0.3);
+    }
+  }
+  
+  /* Prophetic Pulse Animation */
+  @keyframes prophetic-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+  
+  /* Sacred Fade In */
+  @keyframes sacred-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Sacred Slide In */
+  @keyframes sacred-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Sacred Bounce */
+  @keyframes sacred-bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+      transform: translate3d(0, -8px, 0);
+    }
+    70% {
+      transform: translate3d(0, -4px, 0);
+    }
+    90% {
+      transform: translate3d(0, -2px, 0);
+    }
+  }
+  
+  /* Sacred Shimmer */
+  @keyframes sacred-shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+/* Sacred Utility Classes */
+@layer utilities {
+  .animate-sacred-fade-in {
+    animation: sacred-fade-in 0.6s ease-out;
+  }
+  
+  .animate-sacred-slide-in {
+    animation: sacred-slide-in 0.6s ease-out;
+  }
+  
+  .animate-sacred-bounce {
+    animation: sacred-bounce 1s ease-in-out;
+  }
+  
+  .animate-sacred-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 175, 55, 0.2),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: sacred-shimmer 2s infinite;
+  }
+  
+  /* Sacred Gradients */
+  .bg-sacred-gradient {
+    background: linear-gradient(135deg, var(--scroll-slate) 0%, var(--scroll-purple) 50%, var(--scroll-blue) 100%);
+  }
+  
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--scroll-gold) 0%, var(--scroll-amber) 100%);
+  }
+  
+  .bg-purple-gradient {
+    background: linear-gradient(135deg, var(--scroll-purple) 0%, var(--scroll-indigo) 100%);
+  }
+  
+  /* Sacred Text Colors */
+  .text-scroll-gold {
+    color: var(--scroll-gold);
+  }
+  
+  .text-scroll-purple {
+    color: var(--scroll-purple);
+  }
+  
+  .text-scroll-blue {
+    color: var(--scroll-blue);
+  }
+  
+  /* Sacred Border Colors */
+  .border-scroll-gold {
+    border-color: var(--scroll-gold);
+  }
+  
+  .border-scroll-purple {
+    border-color: var(--scroll-purple);
+  }
+  
+  .border-scroll-blue {
+    border-color: var(--scroll-blue);
+  }
+  
+  /* Sacred Background Colors */
+  .bg-scroll-gold {
+    background-color: var(--scroll-gold);
+  }
+  
+  .bg-scroll-purple {
+    background-color: var(--scroll-purple);
+  }
+  
+  .bg-scroll-blue {
+    background-color: var(--scroll-blue);
+  }
+  
+  /* Sacred Opacity */
+  .bg-scroll-gold\/10 {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+  
+  .bg-scroll-purple\/10 {
+    background-color: rgba(102, 51, 153, 0.1);
+  }
+  
+  .bg-scroll-blue\/10 {
+    background-color: rgba(30, 58, 138, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-card {
+    @apply p-4;
+  }
+  
+  .btn-sacred,
+  .btn-prophetic {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .nav-sacred {
+    @apply flex-col space-y-2;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scroll-white: #1F2937;
+    --scroll-black: #F9FAFB;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .scroll-glow,
+  .glow-text,
+  .prophetic-pulse {
+    animation: none;
+    text-shadow: none;
+  }
+  
+  .scroll-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+} 
