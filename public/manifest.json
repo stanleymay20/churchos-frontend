@@ -1,0 +1,30 @@
+{
+  "short_name": "CHURCHOS™",
+  "name": "CHURCHOS™ - Sacred Operating System",
+  "description": "Scroll-governed sacred operating system for prophetic church management",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f2751f",
+  "background_color": "#1e293b",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "lifestyle", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+} 
