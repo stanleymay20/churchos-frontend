@@ -4,6 +4,7 @@
   "description": "CHURCHOS™ Frontend - Sacred Operating System for Prophetic Church Governance",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.13.8",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
     "@tanstack/react-query": "^5.17.9",
@@ -22,7 +23,7 @@
     "react-ga4": "^2.1.0",
     "react-hot-toast": "^2.5.2",
     "react-router-dom": "^6.21.3",
-    "react-scripts": "^0.0.0",
+    "react-scripts": "^5.0.1",
     "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^4.9.5",
